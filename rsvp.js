@@ -3,7 +3,7 @@
 // Paste your deployed Web App URL below (see apps-script/README.md
 // for how to get it).
 // ============================================================
-var RSVP_API_URL = "REPLACE_WITH_YOUR_APPS_SCRIPT_URL";
+var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWXSWTPr0xeBFhzOdrEKxBwHVoqllKXlEH5ENK-0BVZBJEtrc/exec";
 
 (function () {
   var allGuests = [];
