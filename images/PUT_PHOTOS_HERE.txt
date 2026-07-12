@@ -1,0 +1,12 @@
+Add your photos to this folder with these exact filenames:
+
+hero.jpg            - welcome / top photo
+venue.jpg           - Country Sjiek venue photo
+couple-formal.jpg   - formal portrait
+closing.jpg         - closing section photo
+
+The site works fine without them meanwhile - missing photos just show
+a soft placeholder until you add the real files.
+
+Delete this text file once your photos are in place (optional, it won't
+show up on the site either way).
