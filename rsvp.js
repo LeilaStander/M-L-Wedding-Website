@@ -56,7 +56,7 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
     if (matches.length === 0) {
       var none = document.createElement('div');
       none.className = 'rsvp-result-empty';
-      none.textContent = "Geen ooreenstemmende naam nie — probeer net jou voor- of van.";
+      none.textContent = "Geen ooreenstemmende naam nie — probeer net jou voornaam of van.";
       resultsEl.appendChild(none);
       return;
     }
@@ -97,11 +97,11 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
       var yesBtn = document.createElement('button');
       yesBtn.type = 'button';
       yesBtn.className = 'rsvp-toggle-btn';
-      yesBtn.textContent = 'Kom';
+      yesBtn.textContent = 'Eks in!';
       var noBtn = document.createElement('button');
       noBtn.type = 'button';
       noBtn.className = 'rsvp-toggle-btn';
-      noBtn.textContent = 'Kan nie kom nie';
+      noBtn.textContent = 'Sal ongelukkig nie kan bywoon nie.';
 
       function paint() {
         [yesBtn, noBtn].forEach(function (btn) { btn.style.background = ''; btn.style.color = ''; });
@@ -130,7 +130,7 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
     var unset = currentParty.filter(function (g) { return !g._choice; });
     if (unset.length > 0) {
       submitStatus.style.color = '#A34A3A';
-      submitStatus.textContent = 'Merk asseblief bywoning vir almal in jou groep.';
+      submitStatus.textContent = 'Merk asseblief bywoning vir die volgende mense.';
       return;
     }
 
