@@ -1,7 +1,7 @@
 :root {
-  --bg: #FAF8F3;
+  --bg: #FFFFFF;
   --ink: #201E1A;
-  --muted: #6E6656;
+  --muted: #201E1A;
   --accent: #5B6B4F;
   --accent-ink: #33392C;
   --line: #DED6C4;
@@ -31,6 +31,18 @@ main {
   max-width: var(--max);
   margin: 0 auto;
   overflow: hidden;
+}
+
+.page-heading {
+  background: #FFFFFF;
+  text-align: center;
+  padding: 56px 32px 28px;
+}
+.page-heading h2 {
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 /* ── Password gate ──────────────────────── */
@@ -125,6 +137,7 @@ main {
   color: var(--ink);
 }
 .hero-meta .dot { color: var(--line); margin: 0 8px; }
+.hero-rsvp-note { margin-top: 12px; }
 
 /* ── Buttons / links ───────────────────── */
 
@@ -157,15 +170,11 @@ main {
 
 /* ── Section rhythm ────────────────────── */
 
-.divider {
-  text-align: center;
-  padding: 8px 0;
-}
-.divider span {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  color: var(--accent);
-  font-size: 20px;
+.divider-line {
+  width: 64px;
+  height: 1px;
+  background: var(--line);
+  margin: 8px auto;
 }
 
 .section {
@@ -380,6 +389,10 @@ main {
 .accom-contact a { font-size: 13px; color: var(--accent-ink); text-decoration: underline; }
 
 /* ── Closing ────────────────────────────── */
+
+.closing {
+  padding-bottom: 100px;
+}
 
 .closing-message {
   font-size: 26px;
