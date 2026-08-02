@@ -3,7 +3,7 @@
 // Paste your deployed Web App URL below (see apps-script/README.md
 // for how to get it).
 // ============================================================
-var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWXSWTPr0xeBFhzOdrEKxBwHVoqllKXlEH5ENK-0BVZBJEtrc/exec";
+var RSVP_API_URL = "REPLACE_WITH_YOUR_APPS_SCRIPT_URL";
 
 (function () {
   var allGuests = [];
@@ -56,7 +56,7 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
     if (matches.length === 0) {
       var none = document.createElement('div');
       none.className = 'rsvp-result-empty';
-      none.textContent = "Geen ooreenstemmende naam nie — probeer net jou voornaam of van.";
+      none.textContent = "Geen ooreenstemmende naam nie — probeer net jou voor- of van.";
       resultsEl.appendChild(none);
       return;
     }
@@ -97,11 +97,11 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
       var yesBtn = document.createElement('button');
       yesBtn.type = 'button';
       yesBtn.className = 'rsvp-toggle-btn';
-      yesBtn.textContent = 'Eks in!';
+      yesBtn.textContent = 'Kom';
       var noBtn = document.createElement('button');
       noBtn.type = 'button';
       noBtn.className = 'rsvp-toggle-btn';
-      noBtn.textContent = 'Sal ongelukkig nie kan bywoon nie.';
+      noBtn.textContent = 'Kan nie kom nie';
 
       function paint() {
         [yesBtn, noBtn].forEach(function (btn) { btn.style.background = ''; btn.style.color = ''; });
@@ -127,10 +127,11 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
   }
 
   function submitRsvp() {
-    var unset = currentParty.filter(function (g) { return !g._choice; });
-    if (unset.length > 0) {
+    var decided = currentParty.filter(function (g) { return g._choice; });
+
+    if (decided.length === 0) {
       submitStatus.style.color = '#A34A3A';
-      submitStatus.textContent = 'Merk asseblief bywoning vir die volgende mense.';
+      submitStatus.textContent = 'Merk asseblief bywoning vir ten minste jouself.';
       return;
     }
 
@@ -142,7 +143,7 @@ var RSVP_API_URL = "https://script.google.com/macros/s/AKfycbzNDFXekMiqCCgT3lMWX
     var songRequest = document.getElementById('rsvp-song-input').value.trim();
     var message = document.getElementById('rsvp-message-input').value.trim();
 
-    var updates = currentParty.map(function (guest) {
+    var updates = decided.map(function (guest) {
       // text/plain avoids a CORS preflight request, which Apps Script
       // web apps don't handle. The server still parses it as JSON.
       return fetch(RSVP_API_URL, {
