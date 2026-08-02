@@ -7,40 +7,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
 <div id="password-gate" class="gate-overlay">
   <div class="gate-card">
     <h1>Marli <span class="amp">&amp;</span> Liam</h1>
-    <p>Vul die wagwoord in wat saam met jou uitnodiging gestuur is.</p>
+    <p>Voer die wagwoord in wat saam met jou uitnodiging gestuur is.</p>
     <input id="gate-password-input" type="password" placeholder="Wagwoord" autocomplete="off">
-    <button id="gate-submit-btn" type="button" class="btn btn-primary btn-block">Gaan voort</button>
+    <button id="gate-submit-btn" type="button" class="btn btn-primary btn-block">Gaan in</button>
     <div id="gate-error" class="gate-error">Verkeerde wagwoord &mdash; probeer weer.</div>
   </div>
 </div>
-<script src="gate.js"></script>
+<script src="gate.js?v=2"></script>
 
 <main style="display:none;">
 
   <div class="page-heading">
-    <h1>Stander 2027</h1>
+    <h2>Stander 2027</h2>
   </div>
 
   <!-- WELCOME -->
   <section class="hero">
     <div class="hero-photo">
-      <img src="images/IMG_3453.jpeg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
+      <img src="images/hero.jpg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
     </div>
     <div class="hero-content">
       <h1>Marli <span class="amp">&amp;</span> Liam</h1>
       <p class="lede">Jy word hartlik uitgenooi na die huweliksbevestiging van Liam en Marli.</p>
       <div class="hero-meta">
-        <p class="lede">6 Februarie 2027</p>
-        <p class="lede">Country Sjiek, Wolseley</p>
+        <span>6 Februarie 2027</span>
+        <span class="dot">&middot;</span>
+        <span>Country Sjiek, Wolseley</span>
       </div>
-      <p><a href="#rsvp" class="btn btn-primary">RSVP</a></p>
+      <a href="#rsvp" class="btn btn-primary">RSVP</a>
       <p class="section-sub hero-rsvp-note">RSVP teen 31 Oktober 2026</p>
     </div>
   </section>
@@ -49,19 +50,21 @@
 
   <!-- WHEN AND WHERE -->
   <section class="section" id="when-where">
+    <h2>Waar &amp; Wanneer</h2>
     <div class="photo-band">
-      <img src="images/countrysjiek00003-2.jpg" alt="Country Sjiek" onerror="this.parentElement.classList.add('img-missing')">
+      <img src="images/venue.jpg" alt="Country Sjiek" onerror="this.parentElement.classList.add('img-missing')">
     </div>
     <div class="detail-block">
+      <div class="detail-date">6 Februarie 2027</div>
+      <div class="detail-venue">Country Sjiek, Wolseley</div>
       <div class="map-links">
         <a href="https://maps.apple.com/?q=Country+Sjiek+Wolseley" target="_blank" rel="noopener">Apple Maps</a>
         <a href="https://maps.google.com/?q=Country+Sjiek+Wolseley" target="_blank" rel="noopener">Google Maps</a>
       </div>
     </div>
     <div class="note-block">
-      <h2>Belangrik...</h2>
       <p>Ongelukkig kan ons nie kinders by die troue akkommodeer nie.</p>
-      <p>Ons plek is ongelukkig beperk, metgeselle word slegs ingesluit indien ons dit spesifiek noem.</p>
+      <p>Geen "plus-ones" sal genooi word nie, slegs gaste wie ons noem.</p>
     </div>
   </section>
 
@@ -69,20 +72,21 @@
 
   <!-- SCHEDULE -->
   <section class="section" id="schedule">
-    <h2>Die dag se verloop</h2>
+    <h2>Skedule</h2>
     <div class="schedule-list">
       <div class="schedule-row">
-        <p><span class="schedule-time">16:00</span>
-        <span class="schedule-event">Gaste neem sitplekke in</span></p> 
-        </div>
+        <span class="schedule-time">16:00</span>
+        <span class="schedule-event">Gaste neem sitplekke in</span>
+      </div>
       <div class="schedule-row">
-        <p><span class="schedule-time">16:30</span>
-        <span class="schedule-event">Seremonie begin stiptelik</span></p>
+        <span class="schedule-time">16:30</span>
+        <span class="schedule-event">Seremonie begin</span>
       </div>
     </div>
+    <p class="schedule-note">Ons vra dat gaste stiptelik hul sitplekke inneem.</p>
     <div class="dress-code">Kleredrag &mdash; Formeel</div>
     <div class="photo-band">
-      <img src="images/IMG_3452.jpeg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
+      <img src="images/couple-formal.jpg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
     </div>
   </section>
 
@@ -97,7 +101,7 @@
 
       <div id="rsvp-search-stage">
         <label for="rsvp-search-input">Vind jou naam</label>
-        <input id="rsvp-search-input" type="text" placeholder="Tik jou naam..." autocomplete="off">
+        <input id="rsvp-search-input" type="text" placeholder="Begin tik jou naam..." autocomplete="off">
         <div id="rsvp-results"></div>
         <div id="rsvp-loading">Laai gastelys...</div>
         <div id="rsvp-error"></div>
@@ -105,12 +109,13 @@
 
       <div id="rsvp-party-stage" style="display:none;">
         <button id="rsvp-back-btn" type="button" class="link-btn">&larr; Soek weer</button>
-        <div class="rsvp-stage-label">Bevestig asseblief bywoning</div>
+        <div class="rsvp-stage-label">Bevestig bywoning</div>
+        <p class="rsvp-stage-hint">Merk vir jouself, en vir enigeen anders in jou groep as jy vir hulle wil RSVP. Hulle kan ook self later kom RSVP.</p>
         <div id="rsvp-party-list"></div>
 
         <div class="rsvp-extra-field">
           <label for="rsvp-song-input">Liedjie versoek <span class="optional">(opsioneel)</span></label>
-          <input id="rsvp-song-input" type="text" placeholder="Wat wil jy op die dansvloer hoor?" autocomplete="off">
+          <input id="rsvp-song-input" type="text" placeholder="Enige liedjie wat ons op die dansvloer moet speel?" autocomplete="off">
         </div>
 
         <div class="rsvp-extra-field">
@@ -135,8 +140,8 @@
 
   <!-- GIFT -->
   <section class="section" id="gift">
-    <h2>Ons samesyn is genoeg...</h2>
-    <p>Alhoewel geskenke waardeer word, verwag ons dit glad nie.</p>
+    <h2>Geskenk</h2>
+    <p>Alhoewel geskenke waardeer word, word dit glad nie verwag nie.</p>
     <div class="bank-card">
       <div class="bank-label">Bank Besonderhede</div>
       <div class="bank-row"><span>Naam</span><span>L Stander</span></div>
@@ -152,30 +157,18 @@
     <h2>Akkommodasie</h2>
     <p>Hier volg 'n lys van verblyf in die omgewing van Country Sjiek, insluitend kontak besonderhede vir elk.</p>
 
+    <div class="accom-featured">
+      <div class="accom-name">Rivers Own Guest Lodge</div>
+      <div class="accom-contact">
+        <a href="tel:0827878444">082 787 8444</a>
+        <a href="mailto:marketing@riversown.com">marketing@riversown.com</a>
+      </div>
+    </div>
+
     <div class="accom-grid">
       <div class="accom-item">
-        <div class="accom-name">Rivers Own Guest Lodge</div>
-        <div class="accom-contact"><a href="tel:0827878444">082 787 8444</a>
-        <a href="mailto:marketing@riversown.com">marketing@riversown.com</a></div>
-      </div>
-      <div class="accom-item">
-        <div class="accom-name">Vredehoek Guest Farm</div>
-        <div class="accom-contact"><a href="tel:0828889744">082 888 9744</a></div>
-      </div>
-      <div class="accom-item">
-        <div class="accom-name">Seven Oaks Vineyard Cottages</div>
-        <div class="accom-contact"><a href="tel:0836390405">083 639 0405</a>
-          <a href="mailto:cottages@sevenoaks.co.za">cottages@sevenoaks.co.za</a></div>
-      </div>
-      <div class="accom-item">
-        <div class="accom-name">Big Sky Cottages</div>
-        <div class="accom-contact"><a href="tel:0713549209">071 354 9209</a>
-          <a href="mailto:bigskycottages@gmail.com">bigskycottages@gmail.com</a></div>
-      </div>
-      <div class="accom-item">
         <div class="accom-name">Die Kelderhuis</div>
-        <div class="accom-contact"><a href="tel:0233551603">023 355 1603</a>
-        <a href="mailto:info@bergsig.co.za">info@bergsig.co.za</a></div>
+        <div class="accom-contact"><a href="tel:0233551603">023 355 1603</a></div>
       </div>
       <div class="accom-item">
         <div class="accom-name">Oomblik Cabin</div>
@@ -187,18 +180,15 @@
       </div>
       <div class="accom-item">
         <div class="accom-name">Hoogwater Cottage</div>
-        <div class="accom-contact"><a href="tel:0837622803">083 762 2803</a>
-        <a href="mailto:info@hoogwaterfarmlife.co.za">info@hoogwaterfarmlife.co.za</a></div>
+        <div class="accom-contact"><a href="tel:0837622803">083 762 2803</a></div>
       </div>
       <div class="accom-item">
         <div class="accom-name">Under Oak Cottage</div>
-        <div class="accom-contact"><a href="tel:0728704326">072 870 4326</a>
-        <a href="mailto:info@underoakcottage.co.za">info@underoakcottage.co.za</a></div>
+        <div class="accom-contact"><a href="tel:0728704326">072 870 4326</a></div>
       </div>
       <div class="accom-item">
         <div class="accom-name">Orchard Stay</div>
-        <div class="accom-contact"><a href="tel:0711053121">071 105 3121</a>
-        <a href="mailto:info@orchardstay.co.za">info@orchardstay.co.za</a></div>
+        <div class="accom-contact"><a href="tel:0711053121">071 105 3121</a></div>
       </div>
       <div class="accom-item">
         <div class="accom-name">Mosterts Hoek Guest House</div>
@@ -228,11 +218,8 @@
   <!-- CLOSING -->
   <section class="section closing" id="closing">
     <div class="photo-band">
-      <img src="images/01881854-61cc-46ce-92e9-f1a41ccec458.jpeg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
+      <img src="images/closing.jpg" alt="Marli en Liam" onerror="this.parentElement.classList.add('img-missing')">
     </div>
-    
-     <div class="divider-line"></div>
-    
     <h2 class="closing-message">Ons kan nie wag om saam met jou ons troue te vier nie!</h2>
     <p class="section-sub">RSVP teen 31 Oktober 2026</p>
     <p>Kontak ons gerus met enige vrae.</p>
@@ -244,6 +231,6 @@
 
 </main>
 
-<script src="rsvp.js"></script>
+<script src="rsvp.js?v=3"></script>
 </body>
 </html>
